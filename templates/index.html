@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Customer Segmentation</h1>
+
+    <form method="POST">
+
+        <input type="number" step="any" name="age" placeholder="Age" required>
+        <input type="number" step="any" name="income" placeholder="Annual Income" required>
+        <input type="number" step="any" name="score" placeholder="Spending Score" required>
+
+        <button type="submit">Predict Cluster</button>
+    </form>
+
+    {% if cluster is not none %}
+        <h2>Customer Cluster: {{ cluster }}</h2>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
